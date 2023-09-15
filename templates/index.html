@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Headlines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+            background-color: white;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Headlines</h1>
+    <ul>
+        {% for headline in headlines %}
+            <li>
+                <a href="{{ headline['link'] }}" target="_blank">{{ headline['title'] }}</a> - {{ headline['date'] }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
